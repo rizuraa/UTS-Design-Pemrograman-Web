@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
-
 body {
     font-family: "Poppins", sans-serif;
 }
@@ -13,7 +12,9 @@ i {
     margin-right: 10px;
 }
 
+
 /*----------bootstrap-navbar-css------------*/
+
 .navbar-logo {
     padding: 15px;
     color: #fff;
@@ -138,7 +139,6 @@ i {
     text-align: center;
 }
 
-
 .green {
     background-color: #6fb936;
 }
@@ -150,7 +150,6 @@ i {
 .page-top {
     margin-top: 85px;
 }
-
 
 img.zoom {
     width: 100%;
@@ -213,23 +212,23 @@ a:hover {
 }
 
 .section-products #product-1 .part-1::before {
-    background: url("https://i.ibb.co/L8Nrb7p/1.jpg") no-repeat center;
+    background: url("../img/batusplit1.jpg") no-repeat center;
     background-size: cover;
     transition: all 0.3s;
 }
 
 .section-products #product-2 .part-1::before {
-    background: url("https://i.ibb.co/cLnZjnS/2.jpg") no-repeat center;
+    background: url("../img/batubeskos1.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #product-3 .part-1::before {
-    background: url("https://i.ibb.co/L8Nrb7p/1.jpg") no-repeat center;
+    background: url("../img/batubelah1.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #product-4 .part-1::before {
-    background: url("https://i.ibb.co/cLnZjnS/2.jpg") no-repeat center;
+    background: url("../img/jasabeton1.jpg") no-repeat center;
     background-size: cover;
 }
 
@@ -392,16 +391,13 @@ a:hover {
         -ms-flex-pack: start;
         justify-content: flex-start;
     }
-
     .navbar-expand-custom .navbar-nav {
         -ms-flex-direction: row;
         flex-direction: row;
     }
-
     .navbar-expand-custom .navbar-toggler {
         display: none;
     }
-
     .navbar-expand-custom .navbar-collapse {
         display: -ms-flexbox !important;
         display: flex !important;
@@ -410,12 +406,10 @@ a:hover {
     }
 }
 
-
 @media (max-width: 991px) {
     #navbarSupportedContent ul li a {
         padding: 12px 30px;
     }
-
     .hori-selector {
         margin-top: 0px;
         margin-left: 10px;
@@ -423,26 +417,21 @@ a:hover {
         border-top-left-radius: 25px;
         border-bottom-left-radius: 25px;
     }
-
     .hori-selector .left,
     .hori-selector .right {
         right: 10px;
     }
-
     .hori-selector .left {
         top: -25px;
         left: auto;
     }
-
     .hori-selector .right {
         bottom: -25px;
     }
-
     .hori-selector .left:before {
         left: -25px;
         top: -25px;
     }
-
     .hori-selector .right:before {
         bottom: -25px;
         left: -25px;
