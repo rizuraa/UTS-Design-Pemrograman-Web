@@ -12,6 +12,13 @@ i {
     margin-right: 10px;
 }
 
+.bg-white {
+    background-color: #fff;
+}
+
+.c-dark {
+    color: #000;
+}
 
 /*----------bootstrap-navbar-css------------*/
 
@@ -315,17 +322,15 @@ a:hover {
 
 .home-testimonial {
     background-color: #B5DCD9;
-    height: 380px
+    height: 55vh;
+    box-sizing: border-box;
+    clear: both;
 }
 
 .home-testimonial-bottom {
-    background-color: #f8f8f8;
-    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
-    margin-top: 20px;
-    margin-bottom: 0px;
-    position: relative;
     height: 130px;
-    top: 190px
+    clear: both;
+    box-sizing: border-box;
 }
 
 .home-testimonial h3 {
@@ -341,19 +346,10 @@ a:hover {
     font-weight: 700
 }
 
-.testimonial-inner {
-    position: relative;
-    top: -174px
-}
-
-.testimonial-pos {
-    position: relative;
-    top: 24px
-}
-
 .testimonial-inner .tour-desc {
     border-radius: 5px;
-    padding: 40px
+    padding: 40px;
+    clear: both;
 }
 
 .color-grey-3 {
