@@ -15,7 +15,8 @@ Pembuatan website promosi CV Karya Alam Abadi untuk memenuhi tugas besar semeste
  
 
 ## Screenshots
-![image](https://user-images.githubusercontent.com/34876769/143454697-9c186de4-58ba-4a6e-8d3e-7e86a399203a.png)
+![screencapture-file-D-rexTwo-Documents-GitHub-UTS-Design-Pemrograman-Web-index-html-2021-11-26-12_26_09](https://user-images.githubusercontent.com/57904667/143527418-3ce7a82a-ce07-4f66-8789-78780c2c6b53.png)
+
 
 ## 🚀 Tentang Kami
 1.	19104006 / Mohammad Rifqi Zein
