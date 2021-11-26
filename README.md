@@ -7,11 +7,11 @@ Pembuatan website promosi CV Karya Alam Abadi untuk memenuhi tugas besar semeste
 
 ## Tech Stack
 
- - Bootstrap
- - JQuery
- - Fontawesome
- - AOS
- - Fancybox
+ - [Bootstrap 5](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+ - [JQuery](https://jquery.com/)
+ - [Font Awesome](https://fontawesome.com/v5.15/how-to-use/on-the-web/referencing-icons/basic-use)
+ - [AOS](https://michalsnik.github.io/aos/)
+ - [Fancybox](https://fancyapps.com/docs/ui/fancybox/)
  
 ## Live Previews
 [Github Pages](https://rizuuu.github.io/UTS-Design-Pemrograman-Web/)
