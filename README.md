@@ -13,6 +13,8 @@ Pembuatan website promosi CV Karya Alam Abadi untuk memenuhi tugas besar semeste
  - AOS
  - Fancybox
  
+## Live Previews
+[Github Pages](https://rizuuu.github.io/UTS-Design-Pemrograman-Web/)
 
 ## Screenshots
 ![screencapture-file-D-rexTwo-Documents-GitHub-UTS-Design-Pemrograman-Web-index-html-2021-11-26-12_26_09](https://user-images.githubusercontent.com/57904667/143527418-3ce7a82a-ce07-4f66-8789-78780c2c6b53.png)
