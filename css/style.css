@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
 body {
     font-family: "Poppins", sans-serif;
 }
@@ -16,8 +18,24 @@ i {
     background-color: #fff;
 }
 
+.bg-green {
+    background-color: #B5DCD9;
+}
+
+.bg-dark-green {
+    background-color: #96ccc8;
+}
+
 .c-dark {
     color: #000;
+}
+
+.c-green {
+    color: #6c83a2;
+}
+
+.c-white {
+    color: #fff;
 }
 
 /*----------bootstrap-navbar-css------------*/
@@ -334,7 +352,7 @@ a:hover {
 }
 
 .home-testimonial h3 {
-    color: var(--orange);
+    color: #000;
     font-size: 14px;
     font-weight: 500;
     text-transform: uppercase
@@ -344,6 +362,24 @@ a:hover {
     color: white;
     font-size: 28px;
     font-weight: 700
+}
+
+.sec-subtitle {
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase
+}
+
+.sec-title {
+    color: white;
+    font-size: 28px;
+    font-weight: 700
+}
+
+.icon i {
+    margin-top: 1rem;
+    font-size: 2rem;
 }
 
 .testimonial-inner .tour-desc {
@@ -378,6 +414,36 @@ a:hover {
     font-family: "Montserrat", Sans-serif;
     font-size: 12px;
     color: #6c83a2
+}
+
+.maps {
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.contact-item {
+    font-family: 'Poppins' sans-serif;
+}
+
+.contact-item span {
+    font-weight: light;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.contact-item p {
+    font-weight: bold;
+}
+
+.btn-contact {
+    color: #fff;
+    background: #ff9266;
+}
+
+.btn-contact:hover {
+    color: #fff;
+    background: #fc8252;
+    opacity: 0.5;
 }
 
 @media(min-width: 992px) {
