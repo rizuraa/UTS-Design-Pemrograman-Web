@@ -1,3 +1,7 @@
+@php
+    use App\Models\galery;
+    $galery = galery::all();
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -267,13 +271,15 @@
             </div>
         </div>
         <div class="row mb-5">
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb" data-aos="flip-right">
-                <a href="img/img2.jpeg"
-                    class="fancybox" rel="ligthbox">
-                    <img src="img/img2.jpeg" class="zoom img-fluid " alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb" data-aos="flip-right">
+            @foreach ($galery as $item)
+                <div class="col-lg-3 col-md-4   col-xs-6 thumb"   data-aos="flip-right">
+                    <a href="/img/galery/{{ $item->gambar }}"
+                        class="fancybox"    rel="ligthbox">
+                        <img src="/img/galery/{{ $item->gambar }}"    class="zoom img-fluid "    alt="">
+                    </a>
+                </div>
+            @endforeach
+            {{-- <div class="col-lg-3 col-md-4 col-xs-6 thumb" data-aos="flip-right">
                 <a href="img/img3.jpg"
                     class="fancybox" rel="ligthbox">
                     <img src="img/img3.jpg" class="zoom img-fluid" alt="">
@@ -318,7 +324,7 @@
                     class="fancybox" rel="ligthbox">
                     <img src="img/img9.jpg" class="zoom img-fluid " alt="">
                 </a>
-            </div>
+            </div> --}}
         </div>
     </div>
 

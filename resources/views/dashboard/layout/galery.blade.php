@@ -1,3 +1,7 @@
+@php
+    use App\Models\galery;
+    $galery = galery::all();
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -122,31 +126,31 @@
                     </section> --}}
                     <section class="section">
                         <div class="card">
-                            {{-- <div class="card-header">
-                                <a class="btn btn-sm btn-success" href="#" role="button">Tambah</a>
-                            </div> --}}
+                            <div class="card-header">
+                                <button class="btn btn-sm btn-success" role="button" onclick="$('#tambahGambar').modal('show')">Tambah</button>
+                            </div>
                             <div class="card-body">
                                 <table class="table table-striped" id="table1">
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Judul</th>
-                                            <th>Deskripsi</th>
                                             <th>Gambar</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($galery as $item)
+                                            
+                                        
                                         <tr>
                                             <td>1</td>
-                                            <td>vehicula.aliquet@semconsequat.co.uk</td>
-                                            <td>076 4820 8838</td>
-                                            <td>Offenburg</td>
+                                            <td><img width="100px" src="/img/galery/{{ $item->gambar }}"></td>
                                             <td>
-                                                <a class="btn btn-sm btn-primary" href="#" role="button">Edit</a>
-                                                {{-- <a class="btn btn-sm btn-danger" href="#" role="button">Hapus</a> --}}
+                                                {{-- <a class="btn btn-sm btn-primary" href="#" role="button">Edit</a> --}}
+                                                <a class="btn btn-sm btn-danger" href="/galery-hapus/{{ $item->id }}" role="button">Hapus</a>
                                             </td>
                                         </tr>
+                                        @endforeach
                                         {{-- <tr>
                                             <td>2</td>
                                             <td>fringilla.euismod.enim@quam.ca</td>
@@ -180,6 +184,35 @@
         </div>
     </div>
 
+    <div class="modal" id="tambahGambar">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="/galery" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <label>Masukkan Gambar</label>
+                        <input type="file" name="gambar">
+                        <button type="submit">Simpan</button>
+                    </form>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     @include('dashboard.partials.script')
 
     <script src="assets/vendors/simple-datatables/simple-datatables.js"></script>
@@ -187,6 +220,7 @@
         // Simple Datatable
         let table1 = document.querySelector('#table1');
         let dataTable = new simpleDatatables.DataTable(table1);
+
     </script>
 </body>
 

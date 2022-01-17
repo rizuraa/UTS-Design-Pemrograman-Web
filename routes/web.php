@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GaleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', function () {
         return view('dashboard/dashboard');
     });
+
+    Route::post('/galery', [GaleryController::class, 'simpan']);
+
+    Route::get('/galery-hapus/{id}', [GaleryController::class, 'hapus']);
+
+
 
     Route::get('/beranda', function () {
         return view('dashboard/layout/beranda');
