@@ -340,7 +340,7 @@ a:hover {
 
 .home-testimonial {
     background-color: #B5DCD9;
-    height: 55vh;
+    height: 90vh;
     box-sizing: border-box;
     clear: both;
 }
@@ -349,6 +349,7 @@ a:hover {
     height: 130px;
     clear: both;
     box-sizing: border-box;
+    
 }
 
 .home-testimonial h3 {

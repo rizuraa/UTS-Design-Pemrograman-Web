@@ -208,7 +208,7 @@ $home = home::all();
         <div class="container-fluid" data-aos="zoom-out-right">
             <div class="row d-flex justify-content-center testimonial-pos mb-3">
                 <div class="col-md-12 pt-4 d-flex justify-content-center">
-                    <h3>Testimonial</h3>
+                    <h1>Testimonial</h1>
                 </div>
                 <div class="col-md-12 d-flex justify-content-center">
                     <h2>Tesmimoni Pelanggan CV Karya Alam Abadi</h2>
