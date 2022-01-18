@@ -31,7 +31,7 @@ $galery = galery::all();
                             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Beranda</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Galery</li>
                                 </ol>
                             </nav>
                         </div>
