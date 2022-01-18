@@ -56,6 +56,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::post('/home', [HomeController::class, 'simpan']);
 
+    Route::get('/home-hapus/{id}', [HomeController::class, 'hapus']);
+
     Route::get('/admin', function () {
         return view('dashboard/layout/admin');
     });

@@ -41,5 +41,12 @@ class HomeController extends Controller
         $home->save();
         return redirect()->back();
     }
+
+    public function hapus($id)
+    {
+        $home = home::find($id);
+        $home->delete();
+        return redirect()->back();
+    }
 }
 
