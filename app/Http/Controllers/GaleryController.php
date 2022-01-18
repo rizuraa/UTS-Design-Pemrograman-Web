@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\galery;
-use Str;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class GaleryController extends Controller

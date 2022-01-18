@@ -69,7 +69,8 @@ $kontak = kontak::all();
                                             <td>{{ $item->social }}</td>
                                             <td>{{ $item->maps }}</td>
                                             <td>
-                                                <a class="btn btn-sm btn-primary" href="#" role="button">Edit</a>
+                                                <a class="btn btn-sm btn-danger" href="/home-hapus/{{ $item->id }}"
+                                                    role="button">Hapus</a>
                                             </td>
                                         </tr>            
                                         @endforeach

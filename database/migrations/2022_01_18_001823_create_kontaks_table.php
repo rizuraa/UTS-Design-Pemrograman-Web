@@ -19,7 +19,7 @@ class CreateKontaksTable extends Migration
             $table->string('email');
             $table->string('telp');
             $table->string('social');
-            $table->string('maps');
+            $table->text('maps');
             $table->timestamps();
         });
     }
