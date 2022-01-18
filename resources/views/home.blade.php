@@ -61,18 +61,16 @@ $home = home::all();
             <div class="row mt-3">
                 <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
                     data-aos="fade-right" data-aos-delay="200">
-                    <h2>Karya Alam Abadi</h2>
-                    <p class="text-capitalize">
-                        Perusahaan yang bergerak di bidang pertambangan dan pabrik manufacturing yang mengolah material
-                        yang berjenis batu. Mulai beroperasi pada tahun 2016 awal dan mampu bersaing dengan
-                        komperitornya. Faktor tersebut dikarenakan CV. KARYA ALAM ABADI melakukan
-                        produksi produk-produknya dari awal sampai akhir secara mandiri. Hal tersebut membuat perusahaan
-                        ini unggul dalam pengelolaan kualitas dan mampu menjaga kestabilan harga.
-                    </p>
+                    @foreach ($home as $item)
+                        <h2>{{ $item->nama }}</h2>
+                        <p class="text-capitalize">
+                            {{ $item->deskripsi }}
+                        </p>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in-up">
-                    <img src="img/img1.png" alt="Hero Image" class="img-fluid hvr-float" />
+                    <img src="/img/home/{{ $item->gambar }}" alt="Hero Image" class="img-fluid hvr-float" />
                 </div>
+                    @endforeach                    
             </div>
         </div>
     </section>
