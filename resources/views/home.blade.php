@@ -334,9 +334,11 @@ $home = home::all();
             <div class="row">
                 <div class="col" data-aos="fade-right">
                     <div class="maps">
+                        @foreach ($kontak as $item)
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.1234446337803!2d109.20283051536238!3d-7.561517376771922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e654289ed28151b%3A0x5c46585f8b13b485!2sCV.KARYA%20ALAM%20ABADI!5e0!3m2!1sen!2sid!4v1637888653713!5m2!1sen!2sid"
+                            src="{{ $item->maps }}"
                             style="border:0;" width="100%" height="400px" allowfullscreen="" loading="lazy"></iframe>
+                        @endforeach
                     </div>
                 </div>
                 <div class="col" data-aos="fade-left">
