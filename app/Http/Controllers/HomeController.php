@@ -16,7 +16,7 @@ class HomeController extends Controller
         $home->gambar = $request->gambar;
         
         if ($request->hasFile('gambar')) {
-            $gambar = new home();
+            // $gambar = new home();
 
             $file = $request->file('gambar');
             $path = public_path("img/home/");
@@ -32,10 +32,7 @@ class HomeController extends Controller
             // Pindahkan file ke folder img/prestasi
             $file->move($path, $filename);
 
-            $gambar->gambar = $filename;
-            $gambar->save();
-
-            return redirect()->back();
+            $home->gambar = $filename;
         }
 
         $home->save();

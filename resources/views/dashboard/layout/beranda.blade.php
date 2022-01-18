@@ -66,8 +66,8 @@ $home = home::all();
                                             <td>{{ $item->deskripsi }}</td>
                                             <td><img width="100px" src="/img/home/{{ $item->gambar }}"></td>
                                             <td>
-                                                <a class="btn btn-sm btn-primary" href="#" role="button">Edit</a>
-                                                <a class="btn btn-sm btn-danger" href="#" role="button">Hapus</a>
+                                                {{-- <a class="btn btn-sm btn-primary" href="#" role="button">Edit</a> --}}
+                                                <a class="btn btn-sm btn-danger" href="/home-hapus/{{ $item->id }}" role="button">Hapus</a>
                                             </td>
                                         </tr>                                        
                                         @endforeach                                        
@@ -96,7 +96,7 @@ $home = home::all();
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <form action="/home" method="post">
+                    <form action="/home" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <input id="first-name-column" class="form-control" type="text" name="nama"
