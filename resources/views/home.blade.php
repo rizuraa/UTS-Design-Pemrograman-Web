@@ -1,6 +1,8 @@
 @php
-    use App\Models\galery;
-    $galery = galery::all();
+use App\Models\galery;
+use App\Models\kontak;
+$galery = galery::all();
+$kontak = kontak::all();
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +24,8 @@
     <nav class="navbar navbar-expand-custom navbar-mainbg fixed-top overflow-hidden">
         <div class="d-flex justify-content-start">
             <a class="navbar-brand navbar-logo" href="#">Karya Alam Abadi</a>
-            <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <i class="fas fa-bars text-white"></i>
             </button>
         </div>
@@ -54,11 +57,15 @@
     <section id="home" class="d-flex align-items-center hero overflow-hidden mt-5">
         <div class="container mt-5 mb-5">
             <div class="row mt-3">
-                <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-right" data-aos-delay="200">
+                <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
+                    data-aos="fade-right" data-aos-delay="200">
                     <h2>Karya Alam Abadi</h2>
                     <p class="text-capitalize">
-                        Perusahaan yang bergerak di bidang pertambangan dan pabrik manufacturing yang mengolah material yang berjenis batu. Mulai beroperasi pada tahun 2016 awal dan mampu bersaing dengan komperitornya. Faktor tersebut dikarenakan CV. KARYA ALAM ABADI melakukan
-                        produksi produk-produknya dari awal sampai akhir secara mandiri. Hal tersebut membuat perusahaan ini unggul dalam pengelolaan kualitas dan mampu menjaga kestabilan harga.
+                        Perusahaan yang bergerak di bidang pertambangan dan pabrik manufacturing yang mengolah material
+                        yang berjenis batu. Mulai beroperasi pada tahun 2016 awal dan mampu bersaing dengan
+                        komperitornya. Faktor tersebut dikarenakan CV. KARYA ALAM ABADI melakukan
+                        produksi produk-produknya dari awal sampai akhir secara mandiri. Hal tersebut membuat perusahaan
+                        ini unggul dalam pengelolaan kualitas dan mampu menjaga kestabilan harga.
                     </p>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in-up">
@@ -89,7 +96,8 @@
                             <h4 class="title mt-4 text-center c-green">About</h4>
                             <br>
                             <p class="text-capitalize text-center">
-                                Sebuah usaha yang bergerak dibidang peralatan bangunan yang menyediakan berbagai macam kebutuhan
+                                Sebuah usaha yang bergerak dibidang peralatan bangunan yang menyediakan berbagai macam
+                                kebutuhan
                             </p>
                         </div>
                     </div>
@@ -102,7 +110,8 @@
                             <h4 class="title mt-4 text-center c-green">Product</h4>
                             <br>
                             <p class="text-capitalize text-center">
-                                CV. KARYA ALAM ABADI melakukan produksi produk-produknya dari awal sampai akhir secara mandiri, dengan kategori produk Tambang Batu, Stone Crusher dan Batching Plant
+                                CV. KARYA ALAM ABADI melakukan produksi produk-produknya dari awal sampai akhir secara
+                                mandiri, dengan kategori produk Tambang Batu, Stone Crusher dan Batching Plant
                             </p>
                         </div>
                     </div>
@@ -115,7 +124,8 @@
                             <h4 class="title mt-4 text-center c-green">Kualitas</h4>
                             <br>
                             <p class="text-capitalize text-center">
-                                Kualitas barang yang diperjualbelikan adalah kualitas terbaik yang telah melewati uji coba
+                                Kualitas barang yang diperjualbelikan adalah kualitas terbaik yang telah melewati uji
+                                coba
                             </p>
                         </div>
                     </div>
@@ -272,59 +282,12 @@
         </div>
         <div class="row mb-5">
             @foreach ($galery as $item)
-                <div class="col-lg-3 col-md-4   col-xs-6 thumb"   data-aos="flip-right">
-                    <a href="/img/galery/{{ $item->gambar }}"
-                        class="fancybox"    rel="ligthbox">
-                        <img src="/img/galery/{{ $item->gambar }}"    class="zoom img-fluid "    alt="">
-                    </a>
-                </div>
+            <div class="col-lg-3 col-md-4   col-xs-6 thumb" data-aos="flip-right">
+                <a href="/img/galery/{{ $item->gambar }}" class="fancybox" rel="ligthbox">
+                    <img src="/img/galery/{{ $item->gambar }}" class="zoom img-fluid " alt="">
+                </a>
+            </div>
             @endforeach
-            {{-- <div class="col-lg-3 col-md-4 col-xs-6 thumb" data-aos="flip-right">
-                <a href="img/img3.jpg"
-                    class="fancybox" rel="ligthbox">
-                    <img src="img/img3.jpg" class="zoom img-fluid" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb" data-aos="flip-right">
-                <a href="img/img4.jpg"
-                    class="fancybox" rel="ligthbox">
-                    <img src="img/img4.jpg" class="zoom img-fluid " alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb" data-aos="flip-right">
-                <a href="img/img5.jpg"
-                    class="fancybox" rel="ligthbox">
-                    <img src="img/img5.jpg" class="zoom img-fluid " alt="">
-                </a>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb" data-aos="flip-left">
-                <a href="img/img6.jpg"
-                    class="fancybox" rel="ligthbox">
-                    <img src="img/img6.jpg" class="zoom img-fluid " alt="">
-                </a>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb" data-aos="flip-left">
-                <a href="img/img7.jpg"
-                    class="fancybox" rel="ligthbox">
-                    <img src="img/img7.jpg" class="zoom img-fluid " alt="">
-                </a>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb" data-aos="flip-left">
-                <a href="img/img8.jpg"
-                    class="fancybox" rel="ligthbox">
-                    <img src="img/img8.jpg" class="zoom img-fluid " alt="">
-                </a>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb" data-aos="flip-left">
-                <a href="img/img9.jpg"
-                    class="fancybox" rel="ligthbox">
-                    <img src="img/img9.jpg" class="zoom img-fluid " alt="">
-                </a>
-            </div> --}}
         </div>
     </div>
 
@@ -339,38 +302,40 @@
         </div>
         <div class="container container-fluid" data-aos="fade-in">
             <div class="row px-2 py-2">
+                @foreach ($kontak as $item)
                 <div class="col-sm-12 col-md-3">
                     <div class="contact-item">
                         <span>Alamat</span>
-                        <p>CV.Karya Alam Abadi, Kalitugu, Karangasem, Kec. Sampang, Kabupaten Cilacap, Jawa Tengah 53273
-                        </p>
+                        <p>{{ $item->alamat }}</p>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-3">
                     <div class="contact-item">
                         <span>Email</span>
-                        <p>cvkaryaalamabadi16@gmail.com</p>
+                        <p>{{ $item->email }}</p>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-3">
                     <div class="contact-item">
                         <span>Telepon</span>
-                        <p>+62 812 2944 4485</p>
+                        <p>{{ $item->telp }}</p>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-3">
                     <div class="contact-item">
                         <span>Social Media</span>
-                        <i class="far fa-instagram c-dark"></i>
-                        <p>@karyaalamabadi</p>
+                        <i class="fa fa-instagram c-dark"></i>
+                        <p>{{$item->social }}</p>
                     </div>
                 </div>
+                @endforeach
             </div>
             <br>
             <div class="row">
                 <div class="col" data-aos="fade-right">
                     <div class="maps">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.1234446337803!2d109.20283051536238!3d-7.561517376771922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e654289ed28151b%3A0x5c46585f8b13b485!2sCV.KARYA%20ALAM%20ABADI!5e0!3m2!1sen!2sid!4v1637888653713!5m2!1sen!2sid"
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.1234446337803!2d109.20283051536238!3d-7.561517376771922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e654289ed28151b%3A0x5c46585f8b13b485!2sCV.KARYA%20ALAM%20ABADI!5e0!3m2!1sen!2sid!4v1637888653713!5m2!1sen!2sid"
                             style="border:0;" width="100%" height="400px" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>

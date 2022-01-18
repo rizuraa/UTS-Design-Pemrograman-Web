@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GaleryController;
+use App\Http\Controllers\KontakController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,12 +31,6 @@ Route::group(['middleware' => 'auth'], function () {
         return view('dashboard/dashboard');
     });
 
-    Route::post('/galery', [GaleryController::class, 'simpan']);
-
-    Route::get('/galery-hapus/{id}', [GaleryController::class, 'hapus']);
-
-
-
     Route::get('/beranda', function () {
         return view('dashboard/layout/beranda');
     });
@@ -48,10 +43,6 @@ Route::group(['middleware' => 'auth'], function () {
         return view('dashboard/layout/product');
     });
 
-    Route::get('/galery', function () {
-        return view('dashboard/layout/galery');
-    });
-
     Route::get('/testimoni', function () {
         return view('dashboard/layout/testimoni');
     });
@@ -60,39 +51,21 @@ Route::group(['middleware' => 'auth'], function () {
         return view('dashboard/layout/kontak');
     });
 
+    Route::post('/kontak', [KontakController::class, 'simpan']);
+
     Route::get('/admin', function () {
         return view('dashboard/layout/admin');
     });
 
-    // Form Routes
-
-    Route::get('/edit-beranda', function () {
-        return view('dashboard/form/beranda');
+    Route::get('/galery', function () {
+        return view('dashboard/layout/galery');
     });
 
-    Route::get('/edit-sorotan', function () {
-        return view('dashboard/form/sorotan');
-    });
+    Route::post('/galery', [GaleryController::class, 'simpan']);
 
-    Route::get('/edit-product', function () {
-        return view('dashboard/form/product');
-    });
+    Route::get('/galery-hapus/{id}', [GaleryController::class, 'hapus']);
 
-    Route::get('/edit-galery', function () {
-        return view('dashboard/form/galery');
-    });
-
-    Route::get('/edit-testimoni', function () {
-        return view('dashboard/form/testimoni');
-    });
-
-    Route::get('/edit-kontak', function () {
-        return view('dashboard/form/kontak');
-    });
-
-    Route::get('/edit-admin', function () {
-        return view('dashboard/form/admin');
-    });
+    Route::get('/logout', [AuthController::class, 'logout']);
 });
 
 
