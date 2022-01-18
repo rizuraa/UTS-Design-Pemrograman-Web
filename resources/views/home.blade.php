@@ -1,8 +1,10 @@
 @php
 use App\Models\galery;
 use App\Models\kontak;
+use App\Models\home;
 $galery = galery::all();
 $kontak = kontak::all();
+$home = home::all();
 @endphp
 <!DOCTYPE html>
 <html lang="en">

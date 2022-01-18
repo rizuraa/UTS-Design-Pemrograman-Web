@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GaleryController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KontakController;
 
 /*
@@ -52,6 +53,8 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     Route::post('/kontak', [KontakController::class, 'simpan']);
+
+    Route::post('/home', [HomeController::class, 'simpan']);
 
     Route::get('/admin', function () {
         return view('dashboard/layout/admin');

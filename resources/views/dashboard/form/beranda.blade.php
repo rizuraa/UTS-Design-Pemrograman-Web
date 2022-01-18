@@ -7,6 +7,7 @@
     <title>Dashboard - Karya Alam Abadi</title>
 
     @include('dashboard.partials.style')
+    <link rel="stylesheet" href="assets/vendors/simple-datatables/style.css">
 </head>
 
 <body>
@@ -46,6 +47,10 @@
                                     <div class="card-header">
                                         <h4 class="card-title">Edit Beranda</h4>
                                     </div>
+                                    <div class="card-header">
+                                        <button class="btn btn-sm btn-success" role="button"
+                                            onclick="$('#editKontak').modal('show')">Tambah</button>
+                                    </div>                                    
                                     <div class="card-content">
                                         <div class="card-body">
                                             <form class="form">
