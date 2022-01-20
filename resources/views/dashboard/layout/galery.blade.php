@@ -56,8 +56,6 @@ $galery = galery::all();
                                     </thead>
                                     <tbody>
                                         @foreach ($galery as $item)
-
-
                                         <tr>
                                             <td>1</td>
                                             <td><img width="100px" src="/img/galery/{{ $item->gambar }}"></td>

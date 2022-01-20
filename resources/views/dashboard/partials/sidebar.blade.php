@@ -31,7 +31,7 @@
                             <a href="/beranda">Beranda</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="/sorotan">Sorotan</a>
+                            <a href="/sorotan">About</a>
                         </li>
                         <li class="submenu-item ">
                             <a href="/product">Produk Unggulan</a>

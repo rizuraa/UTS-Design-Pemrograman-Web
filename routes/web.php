@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GaleryController;
@@ -23,7 +24,7 @@ Route::get('/', function () {
 
 Route::get('/login', function () {
     return view('dashboard/auth/login');
-});
+})->name('login');
 
 Route::post('/login', [AuthController::class,'authenticate']);
 
@@ -52,9 +53,16 @@ Route::group(['middleware' => 'auth'], function () {
         return view('dashboard/layout/kontak');
     });
 
+    //data insert
     Route::post('/kontak', [KontakController::class, 'simpan']);
 
     Route::post('/home', [HomeController::class, 'simpan']);
+
+    //about route
+    Route::post('/about', [AboutController::class, 'simpan']);
+    Route::get('/about-hapus/{id}', [AboutController::class, 'hapus']);
+    Route::get('/about-get/{id}', [AboutController::class, 'getId']);
+    Route::put('/about-update/{id}', [AboutController::class, 'update']);
 
     Route::get('/home-hapus/{id}', [HomeController::class, 'hapus']);
 
