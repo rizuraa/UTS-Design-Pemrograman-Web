@@ -23,16 +23,17 @@ class AboutController extends Controller
         $about->delete();
         return redirect()->back();
     }    
-
+    
     public function getId($id){
-        $about['about'] = About::find($id);        
+        $data = About::find($id);
+        return $data;        
     }
-
+    
     public function update(Request $request, $id){
         $about = new about();
         $about = about::find($id);
         $about->judul = $request->judul;
-        $about->judul = $request->judul;
+        $about->deskripsi = $request->deskripsi;
         $about->save();
 
         return redirect()->back();

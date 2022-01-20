@@ -62,7 +62,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/about', [AboutController::class, 'simpan']);
     Route::get('/about-hapus/{id}', [AboutController::class, 'hapus']);
     Route::get('/about-get/{id}', [AboutController::class, 'getId']);
-    Route::put('/about-update/{id}', [AboutController::class, 'update']);
+    Route::put('/about-update/{id}', [AboutController::class, 'update'])->name('about.update');
 
     Route::get('/home-hapus/{id}', [HomeController::class, 'hapus']);
 

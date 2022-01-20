@@ -65,15 +65,15 @@
                                             <tr>
                                                 <td>1</td>
                                                 <td>{{ $item->judul }}</td>
-                                                <td>{{ $item->deskripsi }}</td>                                            
+                                                <td>{{ $item->deskripsi }}</td>
                                                 <td>
-                                                    <button action="/about-get/{id}" class="btn btn-sm btn-success" role="button"
-                                                            onclick="$('#updateAbout').modal('show')">Edit</button>
+                                                    <button class="btn btn-sm btn-success" role="button"
+                                                    onclick="showModalEdit({{$item->id}})">Edit</button>
                                                     <a class="btn btn-sm btn-danger" href="/about-hapus/{{ $item->id }}"
                                                         role="button">Hapus</a>
                                                 </td>
-                                            </tr>                                        
-                                        @endforeach                                        
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -136,20 +136,20 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <form action="" method="post">
+                    <form id="form-edit" method="post">
                         @method('PUT')
                         @csrf
                         <div class="form-group">
-                            <input id="first-name-column" class="form-control" type="text" name="judul"
-                                placeholder="masukan judul" value="{{ $item->judul }}">
-                        </div>                        
+                            <input id="input_edit_judul" class="form-control" type="text" name="judul"
+                                placeholder="masukan judul" value="">
+                        </div>
                         <div class="form-group">
-                            <input id="first-name-column" class="form-control" type="text" name="deskripsi"
-                                placeholder="deskripsi" value="{{ $item->deskripsi }}">
-                        </div>                        
+                            <input id="input_edit_deskripsi" class="form-control" type="text" name="deskripsi"
+                                placeholder="deskripsi" value="">
+                        </div>
                 </div>
 
-                <!-- Modal footer -->
+                <!-- Modal footer -->   
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-success">Simpan</button>
                     </form>
@@ -167,6 +167,19 @@
         // Simple Datatable
         let table1 = document.querySelector('#table1');
         let dataTable = new simpleDatatables.DataTable(table1);
+        function showModalEdit(id) {
+            fetch(window.location.origin+'/about-get/'+id)
+            .then(res => res.json())
+            .then(res => {
+        // masukin id ke form action edit
+        $('#form-edit').attr('action', window.location.origin+'/about-update/'+id);
+
+        // Masukin data dari result ke input modal edit
+        $('#input_edit_judul').val(res.judul)
+        $('#input_edit_deskripsi').val(res.deskripsi)
+        $('#updateAbout').modal('show')
+    })
+}
     </script>
 </body>
 
