@@ -3,7 +3,7 @@
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo" srcset=""></a>
+                    <a href="/dashboard"><img src="assets/images/logo/logo.png" alt="Logo" srcset=""></a>
                 </div>
                 <div class="toggler">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -63,7 +63,7 @@
                 <li class="sidebar-title">Support</li>
 
                 <li class="sidebar-item  ">
-                    <a href="https://zuramai.github.io/mazer/docs" class='sidebar-link'>
+                    <a href="https://github.com/rizuuu/UTS-Design-Pemrograman-Web" class='sidebar-link'>
                         <i class="bi bi-life-preserver"></i>
                         <span>Documentation</span>
                     </a>

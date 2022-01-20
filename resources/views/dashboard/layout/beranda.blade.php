@@ -60,7 +60,7 @@ $home = home::all();
                                     <tbody>
                                         @foreach ($home as $item)
                                         <tr>
-                                            <td>1</td>
+                                            <td>{{ $item->id }}</td>
                                             <td>{{ $item->nama  }}</td>
                                             <td>{{ $item->deskripsi }}</td>
                                             <td><img width="100px" src="/img/home/{{ $item->gambar }}"></td>
@@ -69,7 +69,7 @@ $home = home::all();
                                                     onclick="showModalEdit({{$item->id}})">Edit</button>
                                                 <a class="btn btn-sm btn-danger" href="/home-hapus/{{ $item->id }}" role="button">Hapus</a>
                                             </td>
-                                        </tr>                                        
+                                        </tr>     
                                         @endforeach                                        
                                     </tbody>
                                 </table>
