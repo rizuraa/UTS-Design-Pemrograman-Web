@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KontakController;
+use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,17 +34,13 @@ Route::group(['middleware' => 'auth'], function () {
         return view('dashboard/dashboard');
     });
 
-    Route::get('/beranda', function () {
-        return view('dashboard/layout/beranda');
-    });
-
-    Route::get('/sorotan', function () {
-        return view('dashboard/layout/sorotan');
-    });
-
     Route::get('/product', function () {
         return view('dashboard/layout/product');
     });
+    Route::post('/product', [ProdukController::class, 'simpan']);
+    Route::get('/product-hapus/{id}', [ProdukController::class, 'hapus']);
+    Route::get('/product-get/{id}', [ProdukController::class, 'getId']);
+    Route::put('/product-update/{id}', [ProdukController::class, 'update'])->name('product.update');
 
     Route::get('/testimoni', function () {
         return view('dashboard/layout/testimoni');
@@ -52,31 +49,32 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/kontak', function () {
         return view('dashboard/layout/kontak');
     });
-
-    //data insert
     Route::post('/kontak', [KontakController::class, 'simpan']);
 
+    Route::get('/beranda', function () {
+        return view('dashboard/layout/beranda');
+    });
     Route::post('/home', [HomeController::class, 'simpan']);
+    Route::get('/home-hapus/{id}', [HomeController::class, 'hapus']);
 
     //about route
+    Route::get('/sorotan', function () {
+        return view('dashboard/layout/sorotan');
+    });
     Route::post('/about', [AboutController::class, 'simpan']);
     Route::get('/about-hapus/{id}', [AboutController::class, 'hapus']);
     Route::get('/about-get/{id}', [AboutController::class, 'getId']);
     Route::put('/about-update/{id}', [AboutController::class, 'update'])->name('about.update');
 
-    Route::get('/home-hapus/{id}', [HomeController::class, 'hapus']);
+    Route::get('/galery', function () {
+        return view('dashboard/layout/galery');
+    });
+    Route::post('/galery', [GaleryController::class, 'simpan']);
+    Route::get('/galery-hapus/{id}', [GaleryController::class, 'hapus']);
 
     Route::get('/admin', function () {
         return view('dashboard/layout/admin');
     });
-
-    Route::get('/galery', function () {
-        return view('dashboard/layout/galery');
-    });
-
-    Route::post('/galery', [GaleryController::class, 'simpan']);
-
-    Route::get('/galery-hapus/{id}', [GaleryController::class, 'hapus']);
 
     Route::get('/logout', [AuthController::class, 'logout']);
 });

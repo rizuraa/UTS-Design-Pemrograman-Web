@@ -30,13 +30,12 @@
                     <div class="row">
                         <div class="col-12 col-md-6 order-md-1 order-last">
                             <h3>Konten About</h3>
-                            <p class="text-subtitle text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                         </div>
                         <div class="col-12 col-md-6 order-md-2 order-first">
                             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Beranda</li>
+                                    <li class="breadcrumb-item active" aria-current="page">About</li>
                                 </ol>
                             </nav>
                         </div>
@@ -63,7 +62,7 @@
                                     <tbody>
                                         @foreach ($about as $item)
                                             <tr>
-                                                <td>1</td>
+                                                <td>{{ $item->id }}</td>
                                                 <td>{{ $item->judul }}</td>
                                                 <td>{{ $item->deskripsi }}</td>
                                                 <td>
@@ -103,11 +102,11 @@
                         @csrf
                         <div class="form-group">
                             <input id="first-name-column" class="form-control" type="text" name="judul"
-                                placeholder="masukan judul">
+                                placeholder="Masukkan Judul">
                         </div>                        
                         <div class="form-group">
-                            <input id="first-name-column" class="form-control" type="text" name="deskripsi"
-                                placeholder="deskripsi">
+                            <textarea class="form-control" name="deskripsi"
+                                placeholder="Masukkan Deskripsi" rows="3"></textarea>
                         </div>                        
                 </div>
 
@@ -141,12 +140,12 @@
                         @csrf
                         <div class="form-group">
                             <input id="input_edit_judul" class="form-control" type="text" name="judul"
-                                placeholder="masukan judul" value="">
-                        </div>
+                                placeholder="Masukkan Judul">
+                        </div>                        
                         <div class="form-group">
-                            <input id="input_edit_deskripsi" class="form-control" type="text" name="deskripsi"
-                                placeholder="deskripsi" value="">
-                        </div>
+                            <textarea id="input_edit_deskripsi" class="form-control" name="deskripsi"
+                                placeholder="Masukkan Deskripsi" rows="3"></textarea>
+                        </div>  
                 </div>
 
                 <!-- Modal footer -->   
@@ -167,10 +166,12 @@
         // Simple Datatable
         let table1 = document.querySelector('#table1');
         let dataTable = new simpleDatatables.DataTable(table1);
+
         function showModalEdit(id) {
             fetch(window.location.origin+'/about-get/'+id)
             .then(res => res.json())
             .then(res => {
+                
         // masukin id ke form action edit
         $('#form-edit').attr('action', window.location.origin+'/about-update/'+id);
 

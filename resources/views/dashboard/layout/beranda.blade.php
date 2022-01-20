@@ -60,7 +60,7 @@ $home = home::all();
                                     <tbody>
                                         @foreach ($home as $item)
                                         <tr>
-                                            <td>1</td>
+                                            <td>{{ $item->id }}</td>
                                             <td>{{ $item->nama  }}</td>
                                             <td>{{ $item->deskripsi }}</td>
                                             <td><img width="100px" src="/img/home/{{ $item->gambar }}"></td>
