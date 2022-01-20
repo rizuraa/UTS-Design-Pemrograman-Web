@@ -53,18 +53,20 @@ Route::group(['middleware' => 'auth'], function () {
         return view('dashboard/layout/kontak');
     });
 
-    //data insert
+    //kontak route
     Route::post('/kontak', [KontakController::class, 'simpan']);
 
+    //Home Kontroller
     Route::post('/home', [HomeController::class, 'simpan']);
-
+    Route::get('/home-hapus/{id}', [HomeController::class, 'hapus']);
+    Route::get('/home-get/{id}', [HomeController::class, 'getId']);
+    Route::put('/home-update/{id}', [HomeController::class, 'update'])->name('home.update');
+    
     //about route
     Route::post('/about', [AboutController::class, 'simpan']);
     Route::get('/about-hapus/{id}', [AboutController::class, 'hapus']);
     Route::get('/about-get/{id}', [AboutController::class, 'getId']);
     Route::put('/about-update/{id}', [AboutController::class, 'update'])->name('about.update');
-
-    Route::get('/home-hapus/{id}', [HomeController::class, 'hapus']);
 
     Route::get('/admin', function () {
         return view('dashboard/layout/admin');
