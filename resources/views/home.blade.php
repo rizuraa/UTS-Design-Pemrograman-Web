@@ -2,9 +2,13 @@
 use App\Models\galery;
 use App\Models\kontak;
 use App\Models\home;
+use App\Models\produk;
+use App\Models\about;
 $galery = galery::all();
 $kontak = kontak::all();
 $home = home::all();
+$produk = produk::all();
+$about = about::all();
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -62,15 +66,15 @@ $home = home::all();
                 <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
                     data-aos="fade-right" data-aos-delay="200">
                     @foreach ($home as $item)
-                        <h2>{{ $item->nama }}</h2>
-                        <p class="text-capitalize">
-                            {{ $item->deskripsi }}
-                        </p>
+                    <h2>{{ $item->nama }}</h2>
+                    <p class="text-capitalize">
+                        {{ $item->deskripsi }}
+                    </p>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in-up">
                     <img src="/img/home/{{ $item->gambar }}" alt="Hero Image" class="img-fluid hvr-float" />
                 </div>
-                    @endforeach                    
+                @endforeach
             </div>
         </div>
     </section>
@@ -89,47 +93,20 @@ $home = home::all();
             </div>
             <br>
             <div class="row mb-5">
+
+                @foreach ($about as $item)
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="box px-4 py-4">
                         <div class="icon">
                             <i class="fa fa-info-circle c-green"></i>
-                            <h4 class="title mt-4 text-center c-green">About</h4>
+                            <h4 class="title mt-4 text-center c-green">{{ $item->judul }}</h4>
                             <br>
-                            <p class="text-capitalize text-center">
-                                Sebuah usaha yang bergerak dibidang peralatan bangunan yang menyediakan berbagai macam
-                                kebutuhan
-                            </p>
+                            <p class="text-capitalize text-center">{{ $item->deskripsi }}</p>
                         </div>
                     </div>
                 </div>
+                @endforeach
 
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="box px-4 py-4">
-                        <div class="icon">
-                            <i class="fa fa-cart-plus c-green"></i>
-                            <h4 class="title mt-4 text-center c-green">Product</h4>
-                            <br>
-                            <p class="text-capitalize text-center">
-                                CV. KARYA ALAM ABADI melakukan produksi produk-produknya dari awal sampai akhir secara
-                                mandiri, dengan kategori produk Tambang Batu, Stone Crusher dan Batching Plant
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="box px-4 py-4">
-                        <div class="icon">
-                            <i class="fa fa-check-circle c-green"></i>
-                            <h4 class="title mt-4 text-center c-green">Kualitas</h4>
-                            <br>
-                            <p class="text-capitalize text-center">
-                                Kualitas barang yang diperjualbelikan adalah kualitas terbaik yang telah melewati uji
-                                coba
-                            </p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -139,68 +116,33 @@ $home = home::all();
             <div class="row justify-content-center text-center mb-4">
                 <div class="col-md-8 col-lg-6">
                     <div class="">
-                        <!-- <h3>Featured Product</h3> -->
                         <h3>Produk Unggulan</h3>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <!-- Single Product -->
+
+                @foreach ($produk as $item)
+                <style>
+                    .section-products #products .part-1::before {
+                        background: url("../img/product/{{ $item->gambar }}") no-repeat center;
+                        background-size: cover;
+                        transition: all 0.3s;
+                    }
+                </style>
                 <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div id="product-1" class="single-product">
+                    <div id="products" class="single-product">
                         <div class="part-1">
 
                         </div>
                         <div class="part-2">
-                            <h3 class="product-title">Batu Split</h3>
-                            <p>
-                                Ukuran : 1/1 & 1/2
-                            </p>
+                            <h3 class="product-title">{{ $item->judul }}</h3>
+                            <p>{{ $item->deskripsi }}</p>
                         </div>
                     </div>
                 </div>
-                <!-- Single Product -->
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div id="product-2" class="single-product">
-                        <div class="part-1">
+                @endforeach
 
-                        </div>
-                        <div class="part-2">
-                            <h3 class="product-title">Batu Beskos</h3>
-                            <p>
-                                Ukuran : lebih dari Batu Split
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Product -->
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div id="product-3" class="single-product">
-                        <div class="part-1">
-
-                        </div>
-                        <div class="part-2">
-                            <h3 class="product-title">Batu Belah</h3>
-                            <p>
-                                Ukuran : Setengah ukuran batu bongkahan tebing
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Product -->
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div id="product-4" class="single-product">
-                        <div class="part-1">
-
-                        </div>
-                        <div class="part-2">
-                            <h3 class="product-title">Pembuatan Beton</h3>
-                            <p>
-                                Jasa Pembuatan Mix Beton
-                            </p>
-                        </div>
-                    </div>
-                </div>
             </div>
     </section>
 
@@ -335,9 +277,8 @@ $home = home::all();
                 <div class="col" data-aos="fade-right">
                     <div class="maps">
                         @foreach ($kontak as $item)
-                        <iframe
-                            src="{{ $item->maps }}"
-                            style="border:0;" width="100%" height="400px" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="{{ $item->maps }}" style="border:0;" width="100%" height="400px" allowfullscreen=""
+                            loading="lazy"></iframe>
                         @endforeach
                     </div>
                 </div>
