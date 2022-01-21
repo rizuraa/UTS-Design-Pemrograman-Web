@@ -65,8 +65,8 @@ $home = home::all();
                                             <td>{{ $item->deskripsi }}</td>
                                             <td><img width="100px" src="/img/home/{{ $item->gambar }}"></td>
                                             <td>
-                                                <button class="btn btn-sm btn-success" role="button"
-                                                    onclick="showModalEdit({{$item->id}})">Edit</button>
+                                                {{-- <button class="btn btn-sm btn-success" role="button"
+                                                    onclick="showModalEdit({{$item->id}})">Edit</button> --}}
                                                 <a class="btn btn-sm btn-danger" href="/home-hapus/{{ $item->id }}" role="button">Hapus</a>
                                             </td>
                                         </tr>     

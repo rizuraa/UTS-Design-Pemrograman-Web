@@ -55,6 +55,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     //kontak route
     Route::post('/kontak', [KontakController::class, 'simpan']);
+    Route::get('/kontak-get/{id}', [KontakController::class, 'getId']);
+    Route::put('/kontak-update/{id}', [KontakController::class, 'update'])->name('product.update');
 
     //Home Kontroller
     Route::post('/home', [HomeController::class, 'simpan']);

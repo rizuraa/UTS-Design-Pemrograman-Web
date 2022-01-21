@@ -35,10 +35,7 @@
                         </li>
                         <li class="submenu-item ">
                             <a href="/product">Produk Unggulan</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="/testimoni">Testimoni</a>
-                        </li>
+                        </li>                        
                         <li class="submenu-item ">
                             <a href="/galery">Galery</a>
                         </li>

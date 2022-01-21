@@ -64,8 +64,8 @@
                                             <td>{{ $item->deskripsi }}</td>
                                             <td><img width="100px" src="/img/product/{{ $item->gambar }}"></td>
                                             <td>
-                                                <button class="btn btn-sm btn-primary" role="button"
-                                                    onclick="showModalEdit({{$item->id}})">Edit</button>
+                                                {{-- <button class="btn btn-sm btn-primary" role="button"
+                                                    onclick="showModalEdit({{$item->id}})">Edit</button> --}}
                                                 <a class="btn btn-sm btn-danger" href="/product-hapus/{{ $item->id }}"
                                                     role="button">Hapus</a>
                                             </td>

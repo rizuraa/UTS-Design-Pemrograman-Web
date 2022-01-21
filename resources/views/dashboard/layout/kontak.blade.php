@@ -69,6 +69,8 @@ $kontak = kontak::all();
                                             <td>{{ $item->social }}</td>
                                             <td>{{ $item->maps }}</td>
                                             <td>
+                                                <button class="btn btn-sm btn-success" role="button"
+                                                    onclick="showModalEdit({{$item->id}})">Edit</button>
                                                 <a class="btn btn-sm btn-danger" href="/home-hapus/{{ $item->id }}"
                                                     role="button">Hapus</a>
                                             </td>
@@ -134,6 +136,55 @@ $kontak = kontak::all();
         </div>
     </div>
 
+    {{-- Modal Edit data --}}
+    <div class="modal" id="editKontak">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Kontak</h4>
+                    <a type="button" class="close" data-dismiss="modal" onclick="$('#editKontak').modal('hide')">&times;</a>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="" id="form-edit" method="post">
+                        @method('PUT')
+                        @csrf
+                        <div class="form-group">
+                            <input id="first-name-column" class="form-control" type="text" name="alamat"
+                                placeholder="Masukkan Alamat">
+                        </div>
+                        <div class="form-group">
+                            <input id="first-name-column" class="form-control" type="email" name="email"
+                                placeholder="Masukkan Email">
+                        </div>
+                        <div class="form-group">
+                            <input id="first-name-column" class="form-control" type="text" name="telp"
+                                placeholder="Masukkan No.Telp">
+                        </div>
+                        <div class="form-group">
+                            <input id="first-name-column" class="form-control" type="text" name="social"
+                                placeholder="Masukkan Social media">
+                        </div>
+                        <div class="form-group">
+                            <input id="first-name-column" class="form-control" type="text" name="maps"
+                                placeholder="Masukkan Link Maps">
+                        </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Simpan</button>
+                    </form>
+                    <button type="button" class="btn btn btn-danger" data-dismiss="modal"onclick="$('#editKontak').modal('hide')">Batal</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     @include('dashboard.partials.script')
 
     <script src="assets/vendors/simple-datatables/simple-datatables.js"></script>
@@ -142,6 +193,19 @@ $kontak = kontak::all();
         let table1 = document.querySelector('#table1');
         let dataTable = new simpleDatatables.DataTable(table1);
 
+        function showModalEdit(id) {
+        fetch(window.location.origin+'/kontak-get/'+id)
+        .then(res => res.json())
+        .then(res => {
+        // masukin id ke form action edit
+        $('#form-edit').attr('action', window.location.origin+'/about-update/'+id);
+
+        // Masukin data dari result ke input modal edit
+        $('#input_edit_judul').val(res.judul)
+        $('#input_edit_deskripsi').val(res.deskripsi)
+        $('#updateAbout').modal('show')
+    })
+}
     </script>
 </body>
 
