@@ -69,6 +69,8 @@ class ProdukController extends Controller
             $file->move($path, $filename);
 
             $produk->gambar = $filename;
+        }else{            
+            $produk->gambar = $produk->gambar;            
         }
 
         $produk->save();

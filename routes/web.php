@@ -37,6 +37,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/product', function () {
         return view('dashboard/layout/product');
     });
+
+    // produk Modul
     Route::post('/product', [ProdukController::class, 'simpan']);
     Route::get('/product-hapus/{id}', [ProdukController::class, 'hapus']);
     Route::get('/product-get/{id}', [ProdukController::class, 'getId']);

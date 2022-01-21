@@ -187,6 +187,7 @@
         // Masukin data dari result ke input modal edit
         $('#input_edit_judul').val(res.judul)
         $('#input_edit_deskripsi').val(res.deskripsi)
+        $('#input_edit_gambar').val(res.gambar)
         $('#updateProduk').modal('show')
         })
     }
